@@ -1,0 +1,16 @@
+name = "forca-neon"
+main = "src/worker.js"
+compatibility_date = "2025-01-01"
+
+# Arquivos estáticos (o jogo em si)
+[assets]
+directory = "./public"
+
+# Cada sala multiplayer é um Durable Object
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
